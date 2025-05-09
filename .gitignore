@@ -1,0 +1,5 @@
+/main/credentials.h
+/build/
+/cmake-build-debug/
+/sdkconfig
+/sdkconfig.old
