@@ -5,6 +5,5 @@ idf_component_register(SRCS
         "AnalogHumiditySensor.cpp"
         INCLUDE_DIRS "."
         REQUIRES
-
 )
 

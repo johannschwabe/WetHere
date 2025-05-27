@@ -24,7 +24,7 @@ private:
     const char* server_url;
     
     // Device identity
-    std::string device_id;
+    int device_id;
     
     // FreeRTOS event group to signal WiFi events
     EventGroupHandle_t wifi_event_group;
@@ -51,7 +51,7 @@ public:
     IoTManager(const char* wifi_ssid, 
                const char* wifi_password, 
                const char* url, 
-               const char* device_identifier,
+               int device_identifier,
                int max_retries = 5);
     
     ~IoTManager();
@@ -69,5 +69,5 @@ public:
     esp_err_t reconnect();
     
     // Get device ID
-    const std::string& getDeviceId() const { return device_id; }
+    const int getDeviceId() const { return device_id; }
 };

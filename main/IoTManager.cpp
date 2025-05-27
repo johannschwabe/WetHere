@@ -87,7 +87,7 @@ esp_err_t IoTManager::init_nvs()
 IoTManager::IoTManager(const char* wifi_ssid, 
                      const char* wifi_password, 
                      const char* url, 
-                     const char* device_identifier,
+                     int device_identifier,
                      int max_retries)
     : ssid(wifi_ssid), 
       password(wifi_password), 
@@ -188,7 +188,7 @@ esp_err_t IoTManager::sendData(const char* data_json)
 {
     if (!wifi_connected) {
         ESP_LOGE(TAG, "WiFi not connected, cannot send data");
-        return ESP_ERR_WIFI_NOT_CONNECTED;
+        return ESP_ERR_WIFI_NOT_CONNECT;
     }
     
     // Configure HTTP client
